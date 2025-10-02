@@ -5,18 +5,18 @@ class Solution {
    * @return {number[]} Indices of the two numbers that add up to target
    */
   twoSum(nums, target) {
-    let indices = [];
+    const seen = new Map(); // value -> index
+
     for (let i = 0; i < nums.length; i++) {
-      const firstItem = nums[i];
-      for (let j = 0; j < nums.length - 1; j++) {
-        const secondItem = nums[j];
-        const value = firstItem + secondItem;
-        if (value === target) {
-          indices.push(j);
-          indices.push(i);
-        }
+      const complement = target - nums[i];
+
+      if (seen.has(complement)) {
+        return [seen.get(complement), i];
       }
+
+      seen.set(nums[i], i);
     }
-    return indices;
+
+    return [];
   }
 }

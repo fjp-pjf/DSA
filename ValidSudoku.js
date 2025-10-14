@@ -16,7 +16,7 @@ class Solution {
         const boxIndex = Math.floor(r / 3) * 3 + Math.floor(c / 3);
 
         if (rows[r].has(num) || cols[c].has(num) || boxes[boxIndex].has(num)) {
-          return false; // duplicate found
+          return false;
         }
 
         rows[r].add(num);

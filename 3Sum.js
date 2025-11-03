@@ -8,8 +8,7 @@ class Solution {
     const triplets = [];
 
     for (let i = 0; i < nums.length - 2; i++) {
-      // Skip duplicate elements for i
-      if (i > 0 && nums[i] === nums[i - 1]) continue;
+      if (i > 0 && nums[i] === nums[i - 1]) continue; // we are comparing currValue with prevValue and if it is same, skip
 
       let left = i + 1;
       let right = nums.length - 1;
